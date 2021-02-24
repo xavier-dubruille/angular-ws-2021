@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {DogImagesService} from '../../services/dog-images.service';
 
 @Component({
   selector: 'app-adoption',
@@ -8,9 +9,19 @@ import {Component, Input, OnInit} from '@angular/core';
 export class AdoptionComponent implements OnInit {
 
   @Input() dog = '';
-  constructor() { }
+  urlImg = '';
+
+  constructor(private dogImagesService: DogImagesService) {
+  }
 
   ngOnInit(): void {
+    this.dogImagesService.fetchImg().subscribe(
+      dogImage => {
+        console.log(dogImage);
+        this.urlImg = dogImage.message;
+      }
+    )
+    ;
   }
 
 }

@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HelloComponent } from './components/hello/hello.component';
 import { AdoptionComponent } from './components/adoption/adoption.component';
 import { AdoptionPanelComponent } from './components/adoption-panel/adoption-panel.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AdoptionPanelComponent } from './components/adoption-panel/adoption-pan
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
