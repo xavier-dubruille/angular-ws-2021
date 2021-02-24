@@ -1,1 +1,8 @@
-<p>hello works!</p>
+<p>hello works!   {{ title.toUpperCase() }}  </p>
+
+
+<p>la date est {{date | date }}</p>
+
+<img [src]="url" width="960px" alt="ephec">
+
+<button [disabled]="isButtonDisabled" (click)="iVeBeenClicked()"> click me </button>
